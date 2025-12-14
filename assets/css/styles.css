@@ -186,6 +186,15 @@ td {
     font-weight: 600;
     color: #1a237e;
     font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.beach-name:hover {
+    background-color: #e3f2fd;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(30, 136, 229, 0.3);
+    border-radius: 3px;
+    padding: 2px 4px;
 }
 
 .badge {

@@ -102,12 +102,29 @@ function renderTable(data) {
 
 // 打开海滩在Google地图中的位置
 function openBeachMap(name, address) {
-    // 构造Google Maps搜索URL
-    const searchQuery = encodeURIComponent(`${name} ${address} 冲绳`);
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
-    
-    // 在新窗口中打开Google Maps
-    window.open(googleMapsUrl, '_blank');
+    try {
+        // 构造Google Maps搜索URL
+        const searchQuery = `${name} ${address} 冲绳`;
+        // 使用URLSearchParams确保正确的编码
+        const params = new URLSearchParams();
+        params.append('api', '1');
+        params.append('query', searchQuery);
+        
+        const googleMapsUrl = `https://www.google.com/maps/search/?${params.toString()}`;
+        
+        // 在新窗口中打开Google Maps
+        const newWindow = window.open(googleMapsUrl, '_blank');
+        
+        // 检查是否被广告拦截器阻止
+        if (!newWindow) {
+            console.warn('未能打开新窗口，可能被广告拦截器阻止');
+            // 提示用户手动打开链接
+            alert('请允许弹窗或手动打开以下链接:\n' + googleMapsUrl);
+        }
+    } catch (error) {
+        console.error('打开地图时发生错误:', error);
+        alert('打开地图时发生错误，请稍后重试');
+    }
 }
 
 // 设置事件监听
