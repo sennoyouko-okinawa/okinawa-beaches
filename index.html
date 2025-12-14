@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冲绳海滩指南 | Okinawa Beach Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(to right, #1e88e5, #00acc1);
+            color: white;
+            margin: -30px -30px 30px -30px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #1e88e5;
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #757575;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        select {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #1e88e5;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e8f4fd;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
+
+        .beach-count {
+            font-weight: 600;
+            color: #1e88e5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        thead {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+        }
+
+        th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        th i {
+            margin-right: 8px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        td {
+            padding: 16px 15px;
+        }
+
+        .beach-name {
+            font-weight: 600;
+            color: #1a237e;
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .badge-yes {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge-no {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .badge-free {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .badge-paid {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .open-time {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                padding: 20px 0;
+                margin: -15px -15px 20px -15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            th,
+            td {
+                padding: 12px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .icon-cell {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .fa-check {
+            color: #4caf50;
+        }
+
+        .fa-times {
+            color: #f44336;
+        }
+
+        .fa-yen-sign {
+            color: #ff9800;
+        }
+
+        .fa-map-marker-alt {
+            color: #1e88e5;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+            font-size: 1.1rem;
+        }
+
+        .reset-btn {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .reset-btn:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🏖️ 冲绳海滩指南</h1>
+            <p class="subtitle">提供冲绳所有海滩的开放时间、位置、安全员、洗浴间、费用等信息</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="搜索海滩名称或地址...">
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <span class="filter-label">安全员:</span>
+                    <select id="lifeguardFilter">
+                        <option value="all">全部</option>
+                        <option value="yes">有安全员</option>
+                        <option value="no">无安全员</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">洗浴间:</span>
+                    <select id="showerFilter">
+                        <option value="all">全部</option>
+                        <option value="yes">有洗浴间</option>
+                        <option value="no">无洗浴间</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">费用:</span>
+                    <select id="feeFilter">
+                        <option value="all">全部</option>
+                        <option value="free">免费</option>
+                        <option value="paid">收费</option>
+                    </select>
+                </div>
+
+                <button class="reset-btn" id="resetBtn">
+                    <i class="fas fa-redo"></i> 重置筛选
+                </button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div>找到 <span class="beach-count" id="beachCount">0</span> 个海滩</div>
+            <div>数据更新: 2024年6月</div>
+        </div>
+
+        <div class="table-container">
+            <table id="beachTable">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-umbrella-beach"></i> 海滩名称</th>
+                        <th><i class="fas fa-map-marker-alt"></i> 位置</th>
+                        <th><i class="fas fa-clock"></i> 开放时间</th>
+                        <th><i class="fas fa-life-ring"></i> 安全员</th>
+                        <th><i class="fas fa-shower"></i> 洗浴间</th>
+                        <th><i class="fas fa-yen-sign"></i> 费用</th>
+                        <th><i class="fas fa-sticky-note"></i> 备注</th>
+                    </tr>
+                </thead>
+                <tbody id="beachTableBody">
+                    <!-- 数据将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
+                <p>没有找到符合条件的结果</p>
+                <p>请尝试其他搜索词或筛选条件</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 冲绳海滩指南 | 数据仅供参考，实际信息可能有所变动</p>
+            <p style="margin-top: 5px; font-size: 0.85rem;">
+                <i class="fas fa-exclamation-circle"></i> 建议出行前确认最新信息
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 海滩数据 - 这里用模拟数据，你可以用从ChatGPT获取的真实数据替换
+        const beaches = [
+            {
+                id: 1,
+                name: "美ら海水族館ビーチ",
+                address: "国頭郡本部町石川424",
+                open_time: "8:30-18:30",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: false,
+                note: "水族馆附属海滩，设施完善"
+            },
+            {
+                id: 2,
+                name: "那覇波の上ビーチ",
+                address: "那覇市辻3丁目",
+                open_time: "9:00-18:00",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: true,
+                note: "那霸市内最近的海滩"
+            },
+            {
+                id: 3,
+                name: "エメラルドビーチ",
+                address: "国頭郡恩納村前兼久",
+                open_time: "8:00-19:00",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: false,
+                note: "恩纳村著名海滩，海水清澈"
+            },
+            {
+                id: 4,
+                name: "コンドイビーチ",
+                address: "中頭郡読谷村字座喜味",
+                open_time: "8:00-17:00",
+                has_lifeguard: false,
+                has_shower: true,
+                is_free: true,
+                note: "安静的小众海滩"
+            },
+            {
+                id: 5,
+                name: "サンセットビーチ",
+                address: "中頭郡北谷町美浜",
+                open_time: "全天開放",
+                has_lifeguard: true,
+                has_shower: false,
+                is_free: true,
+                note: "观赏日落的最佳地点"
+            },
+            {
+                id: 6,
+                name: "ニライカナイビーチ",
+                address: "国頭郡恩納村瀬良垣",
+                open_time: "9:00-18:00",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: true,
+                note: "度假村附属海滩，对外开放"
+            },
+            {
+                id: 7,
+                name: "万座毛ビーチ",
+                address: "国頭郡恩納村字恩納",
+                open_time: "8:00-17:30",
+                has_lifeguard: false,
+                has_shower: false,
+                is_free: true,
+                note: "靠近万座毛景点"
+            },
+            {
+                id: 8,
+                name: "残波岬ビーチ",
+                address: "中頭郡読谷村字宇座",
+                open_time: "全天開放",
+                has_lifeguard: false,
+                has_shower: false,
+                is_free: true,
+                note: "适合冲浪，浪较大"
+            },
+            {
+                id: 9,
+                name: "瀬長島ビーチ",
+                address: "豊見城市瀬長",
+                open_time: "9:00-18:00",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: false,
+                note: "机场附近，风景优美"
+            },
+            {
+                id: 10,
+                name: "ブセナビーチ",
+                address: "名護市字安部",
+                open_time: "8:00-19:00",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: true,
+                note: "度假村区域，设施完善"
+            },
+            {
+                id: 11,
+                name: "伊計島ビーチ",
+                address: "うるま市与那城伊計",
+                open_time: "8:30-17:00",
+                has_lifeguard: false,
+                has_shower: false,
+                is_free: true,
+                note: "离岛海滩，需要乘船"
+            },
+            {
+                id: 12,
+                name: "渡嘉敷島ビーチ",
+                address: "島尻郡渡嘉敷村渡嘉敷",
+                open_time: "全天開放",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: true,
+                note: "庆良间诸岛著名海滩"
+            },
+            {
+                id: 13,
+                name: "阿嘉島ビーチ",
+                address: "島尻郡座間味村阿嘉",
+                open_time: "全天開放",
+                has_lifeguard: false,
+                has_shower: false,
+                is_free: true,
+                note: "浮潜胜地"
+            },
+            {
+                id: 14,
+                name: "座間味島ビーチ",
+                address: "島尻郡座間味村座間味",
+                open_time: "全天開放",
+                has_lifeguard: true,
+                has_shower: true,
+                is_free: true,
+                note: "海水透明度极高"
+            },
+            {
+                id: 15,
+                name: "宮城島ビーチ",
+                address: "国頭郡今帰仁村字宮城",
+                open_time: "8:00-17:00",
+                has_lifeguard: false,
+                has_shower: false,
+                is_free: true,
+                note: "本地人常去的海滩"
+            }
+        ];
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function () {
+            renderTable(beaches);
+            setupEventListeners();
+        });
+
+        // 渲染表格
+        function renderTable(data) {
+            const tbody = document.getElementById('beachTableBody');
+            const countElement = document.getElementById('beachCount');
+            const noResultsElement = document.getElementById('noResults');
+
+            if (data.length === 0) {
+                tbody.innerHTML = '';
+                countElement.textContent = '0';
+                noResultsElement.style.display = 'block';
+                return;
+            }
+
+            noResultsElement.style.display = 'none';
+            countElement.textContent = data.length;
+
+            let html = '';
+
+            data.forEach(beach => {
+                html += `
+                <tr>
+                    <td>
+                        <div class="beach-name">${beach.name}</div>
+                    </td>
+                    <td>
+                        <div>${beach.address}</div>
+                        <i class="fas fa-map-marker-alt" style="color: #1e88e5; margin-right: 5px;"></i>
+                        <small>冲绳</small>
+                    </td>
+                    <td>
+                        <div class="open-time">${beach.open_time}</div>
+                    </td>
+                    <td class="icon-cell">
+                        ${beach.has_lifeguard
+                        ? '<span class="badge badge-yes"><i class="fas fa-check"></i> 有</span>'
+                        : '<span class="badge badge-no"><i class="fas fa-times"></i> 无</span>'}
+                    </td>
+                    <td class="icon-cell">
+                        ${beach.has_shower
+                        ? '<span class="badge badge-yes"><i class="fas fa-check"></i> 有</span>'
+                        : '<span class="badge badge-no"><i class="fas fa-times"></i> 无</span>'}
+                    </td>
+                    <td class="icon-cell">
+                        ${beach.is_free
+                        ? '<span class="badge badge-free"><i class="fas fa-check"></i> 免费</span>'
+                        : '<span class="badge badge-paid"><i class="fas fa-yen-sign"></i> 收费</span>'}
+                    </td>
+                    <td>
+                        <div class="note">${beach.note}</div>
+                    </td>
+                </tr>
+                `;
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        // 设置事件监听
+        function setupEventListeners() {
+            const searchInput = document.getElementById('searchInput');
+            const lifeguardFilter = document.getElementById('lifeguardFilter');
+            const showerFilter = document.getElementById('showerFilter');
+            const feeFilter = document.getElementById('feeFilter');
+            const resetBtn = document.getElementById('resetBtn');
+
+            // 搜索功能
+            searchInput.addEventListener('input', filterBeaches);
+
+            // 筛选功能
+            lifeguardFilter.addEventListener('change', filterBeaches);
+            showerFilter.addEventListener('change', filterBeaches);
+            feeFilter.addEventListener('change', filterBeaches);
+
+            // 重置按钮
+            resetBtn.addEventListener('click', function () {
+                searchInput.value = '';
+                lifeguardFilter.value = 'all';
+                showerFilter.value = 'all';
+                feeFilter.value = 'all';
+                renderTable(beaches);
+            });
+        }
+
+        // 筛选海滩
+        function filterBeaches() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const lifeguardValue = document.getElementById('lifeguardFilter').value;
+            const showerValue = document.getElementById('showerFilter').value;
+            const feeValue = document.getElementById('feeFilter').value;
+
+            const filtered = beaches.filter(beach => {
+                // 搜索过滤
+                const matchesSearch = searchTerm === '' ||
+                    beach.name.toLowerCase().includes(searchTerm) ||
+                    beach.address.toLowerCase().includes(searchTerm);
+
+                // 安全员过滤
+                const matchesLifeguard = lifeguardValue === 'all' ||
+                    (lifeguardValue === 'yes' && beach.has_lifeguard) ||
+                    (lifeguardValue === 'no' && !beach.has_lifeguard);
+
+                // 洗浴间过滤
+                const matchesShower = showerValue === 'all' ||
+                    (showerValue === 'yes' && beach.has_shower) ||
+                    (showerValue === 'no' && !beach.has_shower);
+
+                // 费用过滤
+                const matchesFee = feeValue === 'all' ||
+                    (feeValue === 'free' && beach.is_free) ||
+                    (feeValue === 'paid' && !beach.is_free);
+
+                return matchesSearch && matchesLifeguard && matchesShower && matchesFee;
+            });
+
+            renderTable(filtered);
+        }
+    </script>
+</body>
+
+</html>
