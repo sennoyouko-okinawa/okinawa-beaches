@@ -12,7 +12,6 @@ function initPage() {
     
     renderTable(beaches);
     setupEventListeners();
-    setupLanguageToggle();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -123,26 +122,6 @@ function setupEventListeners() {
     });
 }
 
-// 设置语言切换按钮
-function setupLanguageToggle() {
-    const toggleButton = document.getElementById('languageToggle');
-    if (toggleButton) {
-        // 确保只添加一次事件监听器
-        toggleButton.removeEventListener('click', toggleLanguage);
-        toggleButton.addEventListener('click', toggleLanguage);
-    }
-}
-
-// 切换语言
-function toggleLanguage() {
-    if (currentLanguage === 'zh') {
-        // 跳转到日文页面
-        window.location.href = 'index-jp.html';
-    } else {
-        // 跳转到中文页面
-        window.location.href = 'index.html';
-    }
-}
 
 // 筛选海滩
 function filterBeaches() {
