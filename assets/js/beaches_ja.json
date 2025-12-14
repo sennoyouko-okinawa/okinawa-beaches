@@ -1,43 +1,43 @@
 [
     {
         "id": 1,
-        "name": "マンザモウ海岸",
+        "name": "万座毛海岸",
         "address": "沖縄県国頭郡恩納村恩納",
-        "open_time": "8:00-18:00",
-        "has_lifeguard": true,
-        "has_shower": true,
+        "open_time": "終日開放（遊泳禁止）",
+        "has_lifeguard": false,
+        "has_shower": false,
         "is_free": true,
-        "note": "象の鼻のような断崖絶壁で有名、写真撮影に最適、潮流が速い時は入水しないように"
+        "note": "象の鼻のような断崖で有名な景勝地。遊泳は禁止されています"
     },
     {
         "id": 2,
-        "name": "マエダミサキ海岸（青の洞窟）",
+        "name": "真栄田岬（青の洞窟）",
         "address": "沖縄県国頭郡恩納村真栄田469-1",
-        "open_time": "8:00-18:00",
+        "open_time": "8:00-18:00（海況により制限あり）",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "シュノーケリングとダイビングの名所、天候が悪いと入水制限がある場合があります"
+        "note": "シュノーケリングとダイビングの名所。天候不良時は入水制限あり"
     },
     {
         "id": 3,
-        "name": "ザンパミスaki海岸",
+        "name": "残波岬海岸",
         "address": "沖縄県中頭郡読谷村宇座",
-        "open_time": "9:00-18:00",
+        "open_time": "9:00-18:00（遊泳期間）",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "夕陽の景色が有名、風波が大きい時は安全に注意"
+        "note": "灯台と夕日の景色が有名。風や波が強い日は注意が必要"
     },
     {
         "id": 4,
-        "name": "アラハ海岸",
+        "name": "アラハビーチ",
         "address": "沖縄県中頭郡北谷町北谷2-21",
         "open_time": "8:00-19:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "美浜アメリカ村に近い、施設が充実し、家族向け"
+        "note": "美浜アメリカンビレッジ近く。設備が整い家族向け"
     },
     {
         "id": 5,
@@ -47,156 +47,156 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "夕暮れの景色が美しい、近隣の飲食・ショッピングが便利"
+        "note": "商業施設が充実し、夕日の景色が美しい"
     },
     {
         "id": 6,
-        "name": "ハノウエ海岸",
+        "name": "波の上ビーチ",
         "address": "沖縄県那覇市若狭1-25-11",
         "open_time": "9:00-18:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "那覇市中心部に最も近いビーチ、交通アクセスが便利"
+        "note": "那覇市内唯一の公式海水浴場。アクセス良好"
     },
     {
         "id": 7,
-        "name": "セナガジマ海岸",
+        "name": "瀬長島海岸",
         "address": "沖縄県豊見城市瀬長",
-        "open_time": "8:00-18:00",
+        "open_time": "自然海岸（利用時間の定めなし）",
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "空港に近く、飛行機の離着陸が観察できる"
+        "note": "空港に近く飛行機の離着陸が見られる。遊泳非推奨"
     },
     {
         "id": 8,
-        "name": "ヒスイ海岸",
+        "name": "エメラルドビーチ",
         "address": "沖縄県国頭郡本部町石川424",
         "open_time": "8:30-18:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "美ら海水族館に近く、水質が澄んでいる"
+        "note": "管理された人工ビーチで水質が良く、家族連れに人気"
     },
     {
         "id": 9,
-        "name": "クバリ海岸",
+        "name": "古宇利ビーチ",
         "address": "沖縄県国頭郡今帰仁村古宇利",
         "open_time": "8:00-18:00",
-        "has_lifeguard": false,
+        "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "古宇利大橋の近く、海水の色合いが豊か"
+        "note": "古宇利大橋のたもとに位置し、海の色が美しい"
     },
     {
         "id": 10,
-        "name": "ミナトジマ海岸",
+        "name": "水納島ビーチ",
         "address": "沖縄県国頭郡本部町水納島",
         "open_time": "9:00-17:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": false,
-        "note": "船でのアクセスが必要、シュノーケリング資源が豊富"
+        "note": "船でアクセス。透明度が高くシュノーケリングに最適"
     },
     {
         "id": 11,
-        "name": "イケジマ海岸",
+        "name": "伊計島ビーチ",
         "address": "沖縄県うるま市与那城伊計",
         "open_time": "9:00-18:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": false,
-        "note": "管理型ビーチ、環境が整っている"
+        "note": "有料の管理型ビーチで設備が整っている"
     },
     {
         "id": 12,
-        "name": "ナムコウ海岸（宜野湾トロピカルビーチ）",
+        "name": "宜野湾トロピカルビーチ",
         "address": "沖縄県宜野湾市真志喜4-2-1",
         "open_time": "9:00-18:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "都市型人工ビーチ、気軽に楽しめる"
+        "note": "都市型人工ビーチで気軽に楽しめる"
     },
     {
         "id": 13,
-        "name": "ヒャクナ海岸",
+        "name": "百名ビーチ",
         "address": "沖縄県南城市玉城百名",
-        "open_time": "8:00-18:00",
+        "open_time": "自然海岸（利用時間の定めなし）",
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "自然の原生ビーチ、地域の信仰文化に関係"
+        "note": "自然のまま残る海岸で、地域の信仰と関係が深い"
     },
     {
         "id": 14,
-        "name": "ニイハラ海岸",
+        "name": "新原ビーチ（みーばる）",
         "address": "沖縄県南城市玉城百名",
         "open_time": "9:00-18:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "干潮時には浅海域まで歩ける"
+        "note": "干潮時は遠浅になり、初心者にも安心"
     },
     {
         "id": 15,
-        "name": "オウジマ海岸",
+        "name": "奥武島海岸",
         "address": "沖縄県南城市玉城奥武",
-        "open_time": "8:00-18:00",
+        "open_time": "自然海岸（利用時間の定めなし）",
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "小さな島の雰囲気が強く、散歩に最適"
+        "note": "島の雰囲気が強く、散策や写真撮影に最適"
     },
     {
         "id": 16,
-        "name": "カテナ海岸",
+        "name": "嘉手納町海岸",
         "address": "沖縄県中頭郡嘉手納町",
-        "open_time": "9:00-18:00",
+        "open_time": "自然海岸（利用時間の定めなし）",
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "人が少なく静か、海を眺めてリラックスするのに最適"
+        "note": "人が少なく、静かに海を眺めたい人向け"
     },
     {
         "id": 17,
-        "name": "ヤガジ海岸",
+        "name": "屋我地ビーチ",
         "address": "沖縄県名護市屋我",
         "open_time": "8:00-18:00",
         "has_lifeguard": false,
         "has_shower": true,
         "is_free": true,
-        "note": "水面が穏やか、ボート遊びに適している"
+        "note": "波が穏やかで、カヤックなどに適している"
     },
     {
         "id": 18,
-        "name": "ハンナ海岸",
+        "name": "漢那ビーチ",
         "address": "沖縄県国頭郡国頭村漢那",
-        "open_time": "9:00-17:00",
+        "open_time": "自然海岸（利用時間の定めなし）",
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "自然の海岸線、訪問者が少ない"
+        "note": "自然海岸で観光客が少なく、原風景が残る"
     },
     {
         "id": 19,
-        "name": "ニシハラKira Kiraビーチ",
+        "name": "西原きらきらビーチ",
         "address": "沖縄県中頭郡西原町東崎",
         "open_time": "9:00-18:00",
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "人工整備されたビーチ、子供連れに最適"
+        "note": "人工整備された安全性の高いビーチ。子供連れ向け"
     },
     {
         "id": 20,
-        "name": "グシカビーチ",
+        "name": "具志川ビーチ",
         "address": "沖縄県うるま市具志川",
-        "open_time": "8:00-18:00",
+        "open_time": "自然海岸（利用時間の定めなし）",
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "地元の人々がよく利用、静かな雰囲気"
+        "note": "地元住民が主に利用する静かな海岸"
     }
 ]
