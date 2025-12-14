@@ -114,6 +114,8 @@ function setupEventListeners() {
 function setupLanguageToggle() {
     const toggleButton = document.getElementById('languageToggle');
     if (toggleButton) {
+        // 确保只添加一次事件监听器
+        toggleButton.removeEventListener('click', toggleLanguage);
         toggleButton.addEventListener('click', toggleLanguage);
     }
 }
@@ -226,6 +228,7 @@ function updateUILanguage() {
     // 重新绑定语言切换按钮事件
     const newToggleButton = document.getElementById('languageToggle');
     if (newToggleButton) {
+        newToggleButton.removeEventListener('click', toggleLanguage);
         newToggleButton.addEventListener('click', toggleLanguage);
     }
 }
