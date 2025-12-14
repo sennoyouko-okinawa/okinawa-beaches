@@ -9,12 +9,19 @@ a {
     color: inherit;
 }
 
+/* 自定义光标样式 */
 body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: #333;
     line-height: 1.6;
     padding: 20px;
     min-height: 100vh;
+    cursor: url('../imgs/clownfish_64.png'), auto;
+}
+
+/* 为所有可交互元素设置光标 */
+button, a, select, input, .beach-name-link {
+    cursor: url('../imgs/clownfish_64.png'), pointer;
 }
 
 .container {
@@ -186,15 +193,26 @@ td {
     font-weight: 600;
     color: #1a237e;
     font-size: 1.1rem;
+}
+
+/* 新增海滩名称链接样式 */
+.beach-name-link {
+    font-weight: 600;
+    color: #1e88e5;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
     transition: all 0.3s ease;
 }
 
-.beach-name:hover {
+.beach-name-link:hover {
     background-color: #e3f2fd;
+    text-decoration: none;
     transform: translateY(-2px);
     box-shadow: 0 2px 4px rgba(30, 136, 229, 0.3);
-    border-radius: 3px;
-    padding: 2px 4px;
 }
 
 .badge {

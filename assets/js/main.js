@@ -12,6 +12,7 @@ function initPage() {
     
     renderTable(beaches);
     setupEventListeners();
+    setupCursorAnimation();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -121,10 +122,74 @@ function openBeachMap(name, address) {
             // 提示用户手动打开链接
             alert('请允许弹窗或手动打开以下链接:\n' + googleMapsUrl);
         }
+        
+        // 触发小丑鱼游动动画
+        triggerFishSwimAnimation();
     } catch (error) {
         console.error('打开地图时发生错误:', error);
         alert('打开地图时发生错误，请稍后重试');
     }
+}
+
+// 设置光标动画
+function setupCursorAnimation() {
+    // 监听鼠标点击事件
+    document.addEventListener('click', function(e) {
+        // 在点击位置添加游动动画
+        createFishSwimEffect(e.clientX, e.clientY);
+    });
+}
+
+// 创建小丑鱼游动效果
+function createFishSwimEffect(x, y) {
+    // 创建一个临时的游动元素
+    const fish = document.createElement('div');
+    fish.style.position = 'fixed';
+    fish.style.left = (x - 16) + 'px';
+    fish.style.top = (y - 16) + 'px';
+    fish.style.width = '32px';
+    fish.style.height = '32px';
+    fish.style.backgroundImage = "url('assets/imgs/clownfish_64.png')";
+    fish.style.backgroundSize = 'contain';
+    fish.style.backgroundRepeat = 'no-repeat';
+    fish.style.pointerEvents = 'none';
+    fish.style.zIndex = '9999';
+    
+    // 添加动画类
+    fish.style.transition = 'all 1s ease-out';
+    fish.style.opacity = '1';
+    
+    // 添加到页面
+    document.body.appendChild(fish);
+    
+    // 执行游动动画
+    setTimeout(() => {
+        // 随机方向游动
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 50 + Math.random() * 50;
+        const newX = x + Math.cos(angle) * distance;
+        const newY = y + Math.sin(angle) * distance;
+        
+        fish.style.left = (newX - 16) + 'px';
+        fish.style.top = (newY - 16) + 'px';
+        fish.style.opacity = '0';
+        fish.style.transform = 'scale(1.5)';
+    }, 10);
+    
+    // 动画结束后移除元素
+    setTimeout(() => {
+        if (fish.parentNode) {
+            fish.parentNode.removeChild(fish);
+        }
+    }, 1000);
+}
+
+// 触发小丑鱼游动动画
+function triggerFishSwimAnimation() {
+    // 获取鼠标当前位置（如果有的话）
+    const x = window.event ? window.event.clientX : window.innerWidth / 2;
+    const y = window.event ? window.event.clientY : window.innerHeight / 2;
+    createFishSwimEffect(x, y);
 }
 
 // 设置事件监听

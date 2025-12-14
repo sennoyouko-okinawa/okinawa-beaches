@@ -3,11 +3,11 @@
         "id": 1,
         "name": "万座毛海岸",
         "address": "沖縄県国頭郡恩納村恩納",
-        "open_time": "终日开放（禁止下海游泳）",
+        "open_time": "终日开放（禁止游泳）",
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "以象鼻形断崖景观著名，主要为观景点，禁止游泳"
+        "note": "以象鼻形断崖闻名的观景海岸，禁止下海游泳"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "浮潜与潜水名所，海况不佳时可能禁止下海"
+        "note": "浮潜和潜水圣地，海况不佳时会限制入水"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "以灯塔与日落闻名，风浪较大时注意安全"
+        "note": "灯塔与日落景观著名，风浪较大需注意安全"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "靠近美滨美国村，设施完善，适合家庭游客"
+        "note": "靠近美滨美国村，设施齐全，适合家庭游客"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "商业设施集中，欣赏日落非常有名"
+        "note": "商业设施集中，欣赏日落的热门地点"
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "那霸市区内唯一的正式海水浴场，交通便利"
+        "note": "那霸市区内唯一正式海水浴场，交通便利"
     },
     {
         "id": 7,
@@ -67,7 +67,7 @@
         "has_lifeguard": false,
         "has_shower": false,
         "is_free": true,
-        "note": "可近距离观看飞机起降，不建议游泳"
+        "note": "靠近机场，可观赏飞机起降，不建议游泳"
     },
     {
         "id": 8,
@@ -87,7 +87,7 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": true,
-        "note": "古宇利大桥旁，海色层次丰富"
+        "note": "古宇利大桥旁，海水颜色层次丰富"
     },
     {
         "id": 10,
@@ -97,6 +97,106 @@
         "has_lifeguard": true,
         "has_shower": true,
         "is_free": false,
-        "note": "需乘船前往，浮潜资源丰富"
+        "note": "需乘船前往，浮潜资源非常丰富"
+    },
+    {
+        "id": 11,
+        "name": "伊计岛海滩",
+        "address": "沖縄県うるま市与那城伊計",
+        "open_time": "9:00-18:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": false,
+        "note": "收费管理型海滩，设施完善，环境整洁"
+    },
+    {
+        "id": 12,
+        "name": "宜野湾热带海滩",
+        "address": "沖縄県宜野湾市真志喜4-2-1",
+        "open_time": "9:00-18:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "城市型人工沙滩，适合短时间游玩"
+    },
+    {
+        "id": 13,
+        "name": "百名海滩",
+        "address": "沖縄県南城市玉城百名",
+        "open_time": "自然海岸（无固定时间）",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "原生态海滩，与当地信仰文化关系密切"
+    },
+    {
+        "id": 14,
+        "name": "新原海滩（みーばる）",
+        "address": "沖縄県南城市玉城百名",
+        "open_time": "9:00-18:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "退潮时可步行至浅海区，适合新手"
+    },
+    {
+        "id": 15,
+        "name": "奥武岛海滩",
+        "address": "沖縄県南城市玉城奥武",
+        "open_time": "自然海岸（无固定时间）",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "小岛风情浓厚，适合散步和拍照"
+    },
+    {
+        "id": 16,
+        "name": "嘉手纳町海岸",
+        "address": "沖縄県中頭郡嘉手納町",
+        "open_time": "自然海岸（无固定时间）",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "游客较少，适合安静看海放松"
+    },
+    {
+        "id": 17,
+        "name": "屋我地海滩",
+        "address": "沖縄県名護市屋我",
+        "open_time": "8:00-18:00",
+        "has_lifeguard": false,
+        "has_shower": true,
+        "is_free": true,
+        "note": "海面平稳，适合划船与轻度水上活动"
+    },
+    {
+        "id": 18,
+        "name": "汉那海滩",
+        "address": "沖縄県国頭郡国頭村漢那",
+        "open_time": "自然海岸（无固定时间）",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "自然海岸线，游客较少，环境原始"
+    },
+    {
+        "id": 19,
+        "name": "西原Kira Kira海滩",
+        "address": "沖縄県中頭郡西原町東崎",
+        "open_time": "9:00-18:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "人工整备海滩，安全性高，适合儿童"
+    },
+    {
+        "id": 20,
+        "name": "具志川海滩",
+        "address": "沖縄県うるま市具志川",
+        "open_time": "自然海岸（无固定时间）",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "以当地居民为主，安静不商业化"
     }
 ]
