@@ -238,6 +238,24 @@ footer {
     font-size: 0.9rem;
 }
 
+.language-toggle {
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    font-size: 1rem;
+}
+
+.language-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 15px;
