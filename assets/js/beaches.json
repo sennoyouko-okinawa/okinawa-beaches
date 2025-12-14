@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "name": "美ら海水族館ビーチ",
+        "address": "国頭郡本部町石川424",
+        "open_time": "8:30-18:30",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": false,
+        "note": "水族馆附属海滩，设施完善"
+    },
+    {
+        "id": 2,
+        "name": "那覇波の上ビーチ",
+        "address": "那覇市辻3丁目",
+        "open_time": "9:00-18:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "那霸市内最近的海滩"
+    },
+    {
+        "id": 3,
+        "name": "エメラルドビーチ",
+        "address": "国頭郡恩納村前兼久",
+        "open_time": "8:00-19:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": false,
+        "note": "恩纳村著名海滩，海水清澈"
+    },
+    {
+        "id": 4,
+        "name": "コンドイビーチ",
+        "address": "中頭郡読谷村字座喜味",
+        "open_time": "8:00-17:00",
+        "has_lifeguard": false,
+        "has_shower": true,
+        "is_free": true,
+        "note": "安静的小众海滩"
+    },
+    {
+        "id": 5,
+        "name": "サンセットビーチ",
+        "address": "中頭郡北谷町美浜",
+        "open_time": "全天開放",
+        "has_lifeguard": true,
+        "has_shower": false,
+        "is_free": true,
+        "note": "观赏日落的最佳地点"
+    },
+    {
+        "id": 6,
+        "name": "ニライカナイビーチ",
+        "address": "国頭郡恩納村瀬良垣",
+        "open_time": "9:00-18:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "度假村附属海滩，对外开放"
+    },
+    {
+        "id": 7,
+        "name": "万座毛ビーチ",
+        "address": "国頭郡恩納村字恩納",
+        "open_time": "8:00-17:30",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "靠近万座毛景点"
+    },
+    {
+        "id": 8,
+        "name": "残波岬ビーチ",
+        "address": "中頭郡読谷村字宇座",
+        "open_time": "全天開放",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "适合冲浪，浪较大"
+    },
+    {
+        "id": 9,
+        "name": "瀬長島ビーチ",
+        "address": "豊見城市瀬長",
+        "open_time": "9:00-18:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": false,
+        "note": "机场附近，风景优美"
+    },
+    {
+        "id": 10,
+        "name": "ブセナビーチ",
+        "address": "名護市字安部",
+        "open_time": "8:00-19:00",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "度假村区域，设施完善"
+    },
+    {
+        "id": 11,
+        "name": "伊計島ビーチ",
+        "address": "うるま市与那城伊計",
+        "open_time": "8:30-17:00",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "离岛海滩，需要乘船"
+    },
+    {
+        "id": 12,
+        "name": "渡嘉敷島ビーチ",
+        "address": "島尻郡渡嘉敷村渡嘉敷",
+        "open_time": "全天開放",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "庆良间诸岛著名海滩"
+    },
+    {
+        "id": 13,
+        "name": "阿嘉島ビーチ",
+        "address": "島尻郡座間味村阿嘉",
+        "open_time": "全天開放",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "浮潜胜地"
+    },
+    {
+        "id": 14,
+        "name": "座間味島ビーチ",
+        "address": "島尻郡座間味村座間味",
+        "open_time": "全天開放",
+        "has_lifeguard": true,
+        "has_shower": true,
+        "is_free": true,
+        "note": "海水透明度极高"
+    },
+    {
+        "id": 15,
+        "name": "宮城島ビーチ",
+        "address": "国頭郡今帰仁村字宮城",
+        "open_time": "8:00-17:00",
+        "has_lifeguard": false,
+        "has_shower": false,
+        "is_free": true,
+        "note": "本地人常去的海滩"
+    }
+]
