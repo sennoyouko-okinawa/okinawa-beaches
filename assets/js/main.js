@@ -58,10 +58,14 @@ function renderTable(data) {
     let html = '';
 
     data.forEach(beach => {
+        // 为海滩名称添加点击事件，点击后在新窗口打开Google地图
         html += `
             <tr>
                 <td>
-                    <div class="beach-name">${beach.name}</div>
+                    <div class="beach-name-link" 
+                        onclick="openBeachMap('${beach.name}', '${beach.address}')">
+                        ${beach.name}
+                    </div>
                 </td>
                 <td>
                     <div>${beach.address}</div>
@@ -96,6 +100,16 @@ function renderTable(data) {
     tbody.innerHTML = html;
 }
 
+// 打开海滩在Google地图中的位置
+function openBeachMap(name, address) {
+    // 构造Google Maps搜索URL
+    const searchQuery = encodeURIComponent(`${name} ${address} 冲绳`);
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
+    
+    // 在新窗口中打开Google Maps
+    window.open(googleMapsUrl, '_blank');
+}
+
 // 设置事件监听
 function setupEventListeners() {
     const searchInput = document.getElementById('searchInput');
@@ -121,7 +135,6 @@ function setupEventListeners() {
         renderTable(beaches);
     });
 }
-
 
 // 筛选海滩
 function filterBeaches() {
