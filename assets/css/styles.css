@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Microsoft YaHei', sans-serif;
 }
 
 body {
@@ -29,7 +28,7 @@ header {
     background: linear-gradient(to right, #1e88e5, #00acc1);
     color: white;
     margin: -30px -30px 30px -30px;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 20px 0 0;
 }
 
 h1 {
@@ -249,6 +248,7 @@ footer {
     transition: all 0.3s ease;
     margin-left: 20px;
     font-size: 1rem;
+    text-decoration: none;
 }
 
 .language-toggle:hover {
