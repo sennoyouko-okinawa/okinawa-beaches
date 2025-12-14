@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沖縄ビーチガイド | Okinawa Beach Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🏖️ 沖縄ビーチガイド 
+                <button id="languageToggle" class="language-toggle">🇨🇳 中文</button>
+            </h1>
+            <p class="subtitle">沖縄のすべてのビーチのオープン時間、場所、ライフセーバー、シャワー、料金などの情報を提供</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="ビーチ名または住所を検索...">
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <span class="filter-label">ライフセーバー:</span>
+                    <select id="lifeguardFilter">
+                        <option value="all">すべて</option>
+                        <option value="yes">あり</option>
+                        <option value="no">なし</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">シャワー:</span>
+                    <select id="showerFilter">
+                        <option value="all">すべて</option>
+                        <option value="yes">あり</option>
+                        <option value="no">なし</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">料金:</span>
+                    <select id="feeFilter">
+                        <option value="all">すべて</option>
+                        <option value="free">無料</option>
+                        <option value="paid">有料</option>
+                    </select>
+                </div>
+
+                <button class="reset-btn" id="resetBtn">
+                    <i class="fas fa-redo"></i> フィルターをリセット
+                </button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div>見つかったビーチ: <span class="beach-count" id="beachCount">0</span> 件</div>
+            <div>データ更新: 2024年6月</div>
+        </div>
+
+        <div class="table-container">
+            <table id="beachTable">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-umbrella-beach"></i> ビーチ名</th>
+                        <th><i class="fas fa-map-marker-alt"></i> 場所</th>
+                        <th><i class="fas fa-clock"></i> オープン時間</th>
+                        <th><i class="fas fa-life-ring"></i> ライフセーバー</th>
+                        <th><i class="fas fa-shower"></i> シャワー</th>
+                        <th><i class="fas fa-yen-sign"></i> 料金</th>
+                        <th><i class="fas fa-sticky-note"></i> 備考</th>
+                    </tr>
+                </thead>
+                <tbody id="beachTableBody">
+                    <!-- データはJavaScriptを通じて動的に読み込まれます -->
+                </tbody>
+            </table>
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
+                <p>条件に一致する結果が見つかりませんでした</p>
+                <p>他の検索語またはフィルター条件をお試しください</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 沖縄ビーチガイド | データは参考のみ、実際の情報と異なる場合があります</p>
+            <p style="margin-top: 5px; font-size: 0.85rem;">
+                <i class="fas fa-exclamation-circle"></i> 出発前に最新情報を確認することをおすすめします
+            </p>
+        </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
