@@ -2,11 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    /* 确保所有元素都使用自定义光标 */
+    cursor: url('../imgs/clownfish_64.png'), auto !important;
 }
 
 /* 自定义光标样式 */
@@ -16,12 +13,12 @@ body {
     line-height: 1.6;
     padding: 20px;
     min-height: 100vh;
-    cursor: url('../imgs/clownfish_64.png'), auto;
+    cursor: url('../imgs/clownfish_64.png'), auto !important;
 }
 
 /* 为所有可交互元素设置光标 */
-button, a, select, input, .beach-name-link {
-    cursor: url('../imgs/clownfish_64.png'), pointer;
+button, a, select, input, .beach-name-link, th, td, div, span {
+    cursor: url('../imgs/clownfish_64.png'), pointer !important;
 }
 
 .container {

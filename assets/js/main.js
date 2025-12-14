@@ -140,7 +140,7 @@ function setupCursorAnimation() {
     });
 }
 
-// 创建小丑鱼游动效果
+// 创建小丑鱼游动效果 - 缩小到50%并向右游动成一个圆圈
 function createFishSwimEffect(x, y) {
     // 创建一个临时的游动元素
     const fish = document.createElement('div');
@@ -154,34 +154,57 @@ function createFishSwimEffect(x, y) {
     fish.style.backgroundRepeat = 'no-repeat';
     fish.style.pointerEvents = 'none';
     fish.style.zIndex = '9999';
+    fish.style.borderRadius = '10px';
     
-    // 添加动画类
-    fish.style.transition = 'all 1s ease-out';
+    // 添加初始动画属性
+    fish.style.transition = 'all 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
     fish.style.opacity = '1';
     
     // 添加到页面
     document.body.appendChild(fish);
     
-    // 执行游动动画
+    // 执行圆形游动动画
     setTimeout(() => {
-        // 随机方向游动
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 50 + Math.random() * 50;
-        const newX = x + Math.cos(angle) * distance;
-        const newY = y + Math.sin(angle) * distance;
+        // 缩小到50%
+        fish.style.transform = 'scale(0.5)';
         
-        fish.style.left = (newX - 16) + 'px';
-        fish.style.top = (newY - 16) + 'px';
-        fish.style.opacity = '0';
-        fish.style.transform = 'scale(1.5)';
+        // 向右移动并形成圆形轨迹
+        // 使用关键帧动画模拟圆形运动
+        const radius = 60; // 圆的半径
+        const centerX = x + radius;
+        const centerY = y;
+        
+        // 分几步完成圆形运动
+        const steps = 20;
+        let step = 0;
+        
+        const animateStep = () => {
+            if (step <= steps) {
+                const angle = (step / steps) * Math.PI * 2; // 0到2π
+                const newX = centerX + radius * Math.cos(angle);
+                const newY = centerY + radius * Math.sin(angle);
+                
+                fish.style.left = (newX - 16) + 'px';
+                fish.style.top = (newY - 16) + 'px';
+                
+                step++;
+                setTimeout(animateStep, 50);
+            } else {
+                // 动画结束，淡出
+                fish.style.opacity = '0';
+                fish.style.transform = 'scale(0.3)';
+                
+                // 动画完全结束后移除元素
+                setTimeout(() => {
+                    if (fish.parentNode) {
+                        fish.parentNode.removeChild(fish);
+                    }
+                }, 300);
+            }
+        };
+        
+        animateStep();
     }, 10);
-    
-    // 动画结束后移除元素
-    setTimeout(() => {
-        if (fish.parentNode) {
-            fish.parentNode.removeChild(fish);
-        }
-    }, 1000);
 }
 
 // 触发小丑鱼游动动画
